@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Recipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>ON</th>
+      <th>P Intns<br>start</th>
+      <th>P Intns<br>end</th>
+      <th>P Prob<br>start</th>
+      <th>P Prob<br>end</th>
+      <th>Precip<br>type</th>
+      <th>Temp<br>Start</th>
+      <th>Temp<br>End</th>
+      <th>Aprnttemp<br>Start</th>
+      <th>Aprnttemp<br>End</th>
+      <th>Windspeed<br>Start</th>
+      <th>Windspeed<br>End</th>
+      <th>Humidity<br>Start</th>
+      <th>Humidity<br>End</th>
+      <th>Pressure<br>Start</th>
+      <th>Pressure<br>End</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.id %></td>
+        <td><%= recipe.name %></td>
+        <td><%= recipe.active %></td>
+        <td><%= recipe.precipIntensityStart %></td>
+        <td><%= recipe.precipIntensityEnd %></td>
+        <td><%= recipe.precipProbabilityStart %></td>
+        <td><%= recipe.precipProbabilityEnd %></td>
+        <td><%= recipe.precipType %></td>
+        <td><%= recipe.temperatureStart %></td>
+        <td><%= recipe.temperatureEnd %></td>
+        <td><%= recipe.apparentTemperatureStart %></td>
+        <td><%= recipe.apparentTemperatureEnd %></td>
+        <td><%= recipe.windSpeedStart %></td>
+        <td><%= recipe.windSpeedEnd %></td>
+        <td><%= recipe.humidityStart %></td>
+        <td><%= recipe.humidityEnd %></td>
+        <td><%= recipe.pressureStart %></td>
+        <td><%= recipe.pressureEnd %></td>
+        <td><%= link_to 'Show', recipe %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path %>

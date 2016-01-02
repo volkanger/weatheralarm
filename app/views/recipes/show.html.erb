@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @recipe.active %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <strong>PI ></strong>
+  <%= @recipe.precipIntensityStart %>
+</p>
+
+<p>
+  <strong>PIntns <</strong>
+  <%= @recipe.precipIntensityEnd %>
+</p>
+
+<p>
+  <strong>PProb ></strong>
+  <%= @recipe.precipProbabilityStart %>
+</p>
+
+<p>
+  <strong>PProb <</strong>
+  <%= @recipe.precipProbabilityEnd %>
+</p>
+
+<p>
+  <strong>P typ</strong>
+  <%= @recipe.precipType %>
+</p>
+
+<p>
+  <strong>T ></strong>
+  <%= @recipe.temperatureStart %>
+</p>
+
+<p>
+  <strong>T <</strong>
+  <%= @recipe.temperatureEnd %>
+</p>
+
+<p>
+  <strong>Aprnt T ></strong>
+  <%= @recipe.apparentTemperatureStart %>
+</p>
+
+<p>
+  <strong>Aprnt T <</strong>
+  <%= @recipe.apparentTemperatureEnd %>
+</p>
+
+<p>
+  <strong>Wspd ></strong>
+  <%= @recipe.windSpeedStart %>
+</p>
+
+<p>
+  <strong>Wspd <</strong>
+  <%= @recipe.windSpeedEnd %>
+</p>
+
+<p>
+  <strong>Hmd  ></strong>
+  <%= @recipe.humidityStart %>
+</p>
+
+<p>
+  <strong>Hmd <</strong>
+  <%= @recipe.humidityEnd %>
+</p>
+
+<p>
+  <strong>Ps ></strong>
+  <%= @recipe.pressureStart %>
+</p>
+
+<p>
+  <strong>Ps <</strong>
+  <%= @recipe.pressureEnd %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>

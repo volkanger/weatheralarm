@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @location.lat %>
+</p>
+
+<p>
+  <strong>Long:</strong>
+  <%= @location.long %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @location.zipcode %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %> |
+<%= link_to 'New', new_location_path %>

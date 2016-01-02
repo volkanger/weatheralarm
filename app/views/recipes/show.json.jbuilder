@@ -1,0 +1,1 @@
+json.extract! @recipe, :id, :precipIntensityStart, :precipIntensityEnd, :precipProbabilityStart, :precipProbabilityEnd, :precipType, :temperature, :apparentTemperature, :windSpeed, :humidity, :pressure, :created_at, :updated_at
