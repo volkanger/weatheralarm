@@ -1,5 +1,5 @@
 class SetActiveDefault < ActiveRecord::Migration
   def change
-    change_column :recipes, :active, :integer, default: 1
+    change_column :recipes, :activated, :integer, default: 1
   end
 end
