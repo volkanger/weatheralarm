@@ -13,7 +13,7 @@ class CheckweatherController < ApplicationController
         @locations = ['11779', '10065', '10017', '06484']
         
         #query the locations
-        @locations each do |k|
+        @locations.each do |k|
             lat = k.lat
             long = k.long
             forecast = ForecastIO.forecast(lat, long)
