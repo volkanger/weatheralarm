@@ -7,7 +7,7 @@ class CreateRecipes < ActiveRecord::Migration
       t.decimal :precipIntensityEnd
       t.decimal :precipProbabilityStart
       t.decimal :precipProbabilityEnd
-      t.string :precipTypeStart
+      t.string :precipType
       t.integer :temperatureStart
       t.integer :temperatureEnd
       t.integer :apparentTemperatureStart
