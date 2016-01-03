@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   
   get 'checkweather' => 'locations#checkweather'
   get 'geo' => 'locations#geo'
+  
+  root 'locations#checkweather'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
