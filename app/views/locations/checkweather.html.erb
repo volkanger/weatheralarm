@@ -1,14 +1,3 @@
 <p id="notice"><%= notice %></p>
 
 
-<% @result %>
-<% @result = @result.sort_by {|x,y| x} %>
-<% @result.map {|n| n[0]} %>
-<% @uniq = @result.map {|n| n[0]}.uniq %>
-<% @uniq.each do |x| %><br>
-These zipcodes matches <a href="recipes/<%= x %>"> <%= Recipe.find(x).name %> </a>:<br>
-<% @hede = @result.select {|n| n[0] == x} %><br>
-<% @hede.each do |y| %>
-<%= y[1] %> <br>
-<% end %>
-<% end %>
