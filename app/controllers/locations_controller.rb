@@ -85,6 +85,7 @@ class LocationsController < ApplicationController
 
 
   def checkweather
+    ForecastIO.api_key = '0a4722abfcc294ac2966f2a1f8240b55'
   end
   
   def checkweather2
