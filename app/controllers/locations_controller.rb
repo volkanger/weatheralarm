@@ -176,7 +176,7 @@ class LocationsController < ApplicationController
             @result << [r.id, l.zipcode]
           end
         end
-        
+        flash[:notice] = "Calculation completed."
         
   end
   
