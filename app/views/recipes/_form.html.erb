@@ -12,6 +12,26 @@
   <% end %>
   
   <div class="field">
+    <%= f.label :precipType %><br>
+    <%= f.text_field :precipType %>
+  </div>
+  <div class="field">
+    <%= f.label :temperatureStart %><br>
+    <%= f.number_field :temperatureStart %>
+  </div>
+  <div class="field">
+    <%= f.label :temperatureEnd %><br>
+    <%= f.number_field :temperatureEnd %>
+  </div>
+  <div class="field">
+    <%= f.label :apparentTemperatureStart %><br>
+    <%= f.number_field :apparentTemperatureStart %>
+  </div>
+  <div class="field">
+    <%= f.label :apparentTemperatureEnd %><br>
+    <%= f.number_field :apparentTemperatureEnd %>
+  </div>
+  <div class="field">
     <%= f.label :windSpeedStart %><br>
     <%= f.number_field :windSpeedStart %>
   </div>
