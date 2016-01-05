@@ -186,13 +186,15 @@ class LocationsController < ApplicationController
         flash[:notice] = "Calculation completed."
         emailcustomers
         
-        @csv = @result
+        
+        uniq = @result.sort_by {|x,y| x}.map {|n| n[0]}.uniq
+        
         
         
         
         respond_to do |format|
           format.html
-          format.csv { send_data @csv.to_csv }
+          format.csv { send_data uniq.to_csv }
         end
   end
 
