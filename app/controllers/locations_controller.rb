@@ -187,14 +187,20 @@ class LocationsController < ApplicationController
         emailcustomers
         
         
-        @uniq = @result.sort_by {|x,y| x}.map {|n| n[0]}.uniq
-        
+        uniq = @result.sort_by {|x,y| x}.map {|n| n[0]}.uniq
+        uniq.each do |x|
+        # Recipe.find(x).name 
+          @result.select {|n| n[0] == x}.each do |y|
+            y
+          end
+          #@csv << y[1]
+        end
         
         
         
         respond_to do |format|
           format.html
-          format.csv { send_data @uniq.to_csv }
+          format.csv { send_data uniq.to_csv }
         end
   end
 
