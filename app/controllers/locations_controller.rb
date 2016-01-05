@@ -191,7 +191,8 @@ class LocationsController < ApplicationController
         uniq.each do |x|
         # Recipe.find(x).name 
           @result.select {|n| n[0] == x}.each do |y|
-            y
+            @hee ||= []
+            @hee << y[1]
           end
           #@csv << y[1]
         end
@@ -200,7 +201,7 @@ class LocationsController < ApplicationController
         
         respond_to do |format|
           format.html
-          format.csv { send_data y.to_csv }
+          format.csv { send_data @hee.to_csv }
         end
   end
 
