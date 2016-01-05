@@ -187,11 +187,10 @@ class LocationsController < ApplicationController
         emailcustomers
         
         
-        @resultsorted = @result.sort_by {|x,y| x}
-        @uniq = @resultsorted.map {|n| n[0]}.uniq
-        @uniq.each do |x|
-        These zipcodes matches x Recipe.find(x).name 
-        @hede = @result.select {|n| n[0] == x}<br>
+        uniq = @result.sort_by {|x,y| x}.map {|n| n[0]}.uniq
+        uniq.each do |x|
+        # Recipe.find(x).name 
+        @hede = @result.select {|n| n[0] == x}
         @hede.each do |y|
         @csv << y[1]
         end
