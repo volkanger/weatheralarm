@@ -7,6 +7,10 @@ class LocationsController < ApplicationController
     @locations = Location.all
   end
 
+  def import
+    Location.import(params[:file])
+    redirect_to root_url, notice: "Locations imported."
+  end
 
   def saveforlateruse
     #get locations
@@ -180,7 +184,11 @@ class LocationsController < ApplicationController
           end
         end
         flash[:notice] = "Calculation completed."
-        UserMailer.welcome(2).deliver_now
+        emailcustomers
+  end
+
+  def emailcustomers
+        UserMailer.welcome(1).deliver_now
   end
 
   def geo
