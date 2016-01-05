@@ -187,14 +187,14 @@ class LocationsController < ApplicationController
         emailcustomers
         
         
-        uniq = @result.sort_by {|x,y| x}.map {|n| n[0]}.uniq
+        @uniq = @result.sort_by {|x,y| x}.map {|n| n[0]}.uniq
         
         
         
         
         respond_to do |format|
           format.html
-          format.csv { send_data uniq.to_csv }
+          format.csv { send_data @uniq.to_csv }
         end
   end
 
