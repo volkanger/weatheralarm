@@ -200,7 +200,7 @@ class LocationsController < ApplicationController
         
         respond_to do |format|
           format.html
-          format.csv { send_data uniq.to_csv }
+          format.csv { send_data y.to_csv }
         end
   end
 
