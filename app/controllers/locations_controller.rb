@@ -186,9 +186,22 @@ class LocationsController < ApplicationController
         flash[:notice] = "Calculation completed."
         emailcustomers
         
+        
+        @resultsorted = @result.sort_by {|x,y| x}
+        @uniq = @resultsorted.map {|n| n[0]}.uniq
+        @uniq.each do |x|
+        These zipcodes matches x Recipe.find(x).name 
+        @hede = @result.select {|n| n[0] == x}<br>
+        @hede.each do |y|
+        @csv << y[1]
+        end
+        end
+        
+        
+        
         respond_to do |format|
           format.html
-          format.csv {render text: @result.to_csv }
+          format.csv { send_data @csv.to_csv }
         end
   end
 
