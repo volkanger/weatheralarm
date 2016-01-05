@@ -185,6 +185,11 @@ class LocationsController < ApplicationController
         end
         flash[:notice] = "Calculation completed."
         emailcustomers
+        
+        respond_to do |format|
+          format.html
+          format.csv {render text: @result.to_csv }
+        end
   end
 
   def emailcustomers
