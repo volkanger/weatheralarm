@@ -9,9 +9,9 @@ class Location < ActiveRecord::Base
     
     def self.to_csv
         CSV.generate do |csv|
-            csv << column_names
+            csv << y[0]
         all.each do |product|
-            csv << @result.attributes.values_at(*column_names)
+            csv << y[1].attributes.values_at(*column_names)
             end
         end
     end
