@@ -192,7 +192,7 @@ class LocationsController < ApplicationController
         # Recipe.find(x).name 
           @result.select {|n| n[0] == x}.each do |y|
             @hee ||= []
-            @hee << [y[0], y[1]]
+            @hee << [Recipes.find.(y[0]), y[1]]
           end
           #@csv << y[1]
         end
