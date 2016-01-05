@@ -12,5 +12,8 @@ class Location < ActiveRecord::Base
             csv << column_names
         all.each do |product|
             csv << @result.attributes.values_at(*column_names)
+            end
+        end
+    end
     
 end
