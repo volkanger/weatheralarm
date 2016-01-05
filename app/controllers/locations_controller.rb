@@ -186,15 +186,7 @@ class LocationsController < ApplicationController
         flash[:notice] = "Calculation completed."
         emailcustomers
         
-        
-        uniq = @result.sort_by {|x,y| x}.map {|n| n[0]}.uniq
-        uniq.each do |x|
-        # Recipe.find(x).name 
-        @hede = @result.select {|n| n[0] == x}
-        @hede.each do |y|
-        @csv << y[1]
-        end
-        end
+        @csv = @result
         
         
         
