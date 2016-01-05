@@ -192,13 +192,11 @@ class LocationsController < ApplicationController
         # Recipe.find(x).name 
           @result.select {|n| n[0] == x}.each do |y|
             @hee ||= []
-            @hee << y[1]
+            @hee << [y[0], y[1]]
           end
           #@csv << y[1]
         end
-        
-        
-        
+  
         respond_to do |format|
           format.html
           format.csv { send_data @hee.to_csv }
